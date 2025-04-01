@@ -56,6 +56,3 @@ The application will start running on [http://localhost:8080/employees](http://l
 
 ## Contribution Guidelines
 Contributions are welcome! Feel free to fork the repository, make changes, and create a pull request.
-
-## Contact
-For any questions or suggestions, please reach out at **yuvasrip71225@gmail.com**
