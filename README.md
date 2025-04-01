@@ -48,6 +48,8 @@ The application will start running on [http://localhost:8080/employees](http://l
 - **Delete Employee:** `GET /employees/delete/{id}`
 - **Search Employee:** `GET /employees/search?keyword={keyword}`
 - **View Employee Details:** `GET /employees/{id}`
+## Screenshots
+View all screenshots here (screenshots_files)-folder
 
 ## Future Enhancements
 - **Role-Based Authentication:** Add user roles for Admin and Employee.
