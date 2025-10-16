@@ -35,13 +35,13 @@ CREATE DATABASE EmployeeManagementSystem;
 3. Open src/main/resources/application.properties and configure as follows:
 
   spring.application.name=EmployeeManagement_System
-  # Database Configuration
+    Database Configuration
   spring.datasource.url=jdbc:mysql://localhost:3306/EmployeeManagementSystem?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
   spring.datasource.username=root
   spring.datasource.password=root
   spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-  # JPA / Hibernate Settings
+   JPA / Hibernate Settings
   spring.jpa.hibernate.ddl-auto=update
   spring.jpa.show-sql=true
   spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
