@@ -1,7 +1,7 @@
 # Employee Management System
 
 ## Project Overview
-The Employee Management System is a Spring Boot web application designed to efficiently manage employee data. It allows users to perform CRUD operations (Create, Read, Update, Delete) on employee records, search for employees by name or department, and view detailed information for each employee. This application is built using modern web development practices with a focus on simplicity and usability.
+The Employee Management System (EMS) is a Spring Boot web application designed to efficiently manage employee data. It allows users to perform CRUD operations (Create, Read, Update, Delete) on employee records, search employees by name or department, and view detailed information for each employee. The application follows modern web development practices with a focus on simplicity, usability, and real database integration.
 
 ## Features
 1. **Add New Employees:** Fill out a form to add employee details, including name, department, join date, and salary.
@@ -14,7 +14,7 @@ The Employee Management System is a Spring Boot web application designed to effi
 ## Tech Stack
 - **Backend:** Java, Spring Boot
 - **Frontend:** Thymeleaf, HTML, CSS
-- **Database:** H2 Database
+- **Database:** MySQL
 - **Build Tool:** Maven
 - **Programming Language:** Java
 
@@ -27,19 +27,32 @@ cd EmployeeManagement_System
 ```
 
 ### 2. Configure the Database
-The application uses the H2 Database with in-memory storage. No additional setup is required for the database.
+1. The application now uses MySQL as the database. Make sure MySQL is installed and running on your system.
 
-To access the console:
-1. Run the application.
-2. Navigate to [H2 Console](http://localhost:8080/h2-console).
-3. Enter the JDBC URL, username, and password as configured in the `application.properties` file.
+2. Create a new database:
+CREATE DATABASE EmployeeManagementSystem;
+
+3. Open src/main/resources/application.properties and configure as follows:
+
+  spring.application.name=EmployeeManagement_System
+  # Database Configuration
+  spring.datasource.url=jdbc:mysql://localhost:3306/EmployeeManagementSystem?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+  spring.datasource.username=root
+  spring.datasource.password=root
+  spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+  # JPA / Hibernate Settings
+  spring.jpa.hibernate.ddl-auto=update
+  spring.jpa.show-sql=true
+  spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+  spring.jpa.properties.hibernate.format_sql=true
 
 ### 3. Build and Run the Application
 ```bash
 mvn clean install
 mvn spring-boot:run
 ```
-The application will start running on [http://localhost:8080/employees](http://localhost:8080/employees).
+The application will start running on http://localhost:8080/employees
 
 ## Endpoints
 - **View All Employees:** `GET /employees`
